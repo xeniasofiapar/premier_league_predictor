@@ -33,19 +33,6 @@ for team in teams:
 
 conn.commit()
 
-# Create odds table
-cur.execute("""
-    CREATE TABLE IF NOT EXISTS odds (
-        odds_id INTEGER PRIMARY KEY AUTOINCREMENT,
-        match_id INTEGER UNIQUE,
-        odds_home REAL,
-        odds_draw REAL,
-        odds_away REAL,
-        FOREIGN KEY (match_id) REFERENCES matches(match_id)
-    )
-""")
-conn.commit()
-
 # Insert matches
 for _, row in df_matches.iterrows():
     cur.execute("""
