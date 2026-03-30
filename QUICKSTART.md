@@ -8,7 +8,7 @@ pip install pandas numpy scikit-learn joblib streamlit plotly
 ```
 
 ### 2️⃣ Prepare Your Data
-Make sure you have `football_data_2025_26.csv` in the project folder with these columns:
+`football_data_2025_26.csv` in the project folder with columns:
 - Round
 - Date
 - HomeTeam
@@ -50,7 +50,7 @@ python model_train.py
 streamlit run app_advanced.py
 ```
 
-Opens beautiful UI at: http://localhost:8501
+Opens UI at: http://localhost:8501
 
 ---
 
@@ -106,7 +106,7 @@ match_predictor.pkl (trained model)
         ↓
    app_advanced.py (Streamlit UI)
         ↓
-🎉 Beautiful Predictions!
+🎉 Predictions!
 ```
 
 ---
@@ -164,14 +164,3 @@ match_predictor.pkl (trained model)
 - Betting models need 52%+ to be profitable
 
 ---
-
-## 🎯 Next Steps
-
-After running successfully:
-1. Monitor predictions vs actual results
-2. Collect feedback on accuracy
-3. Consider adding player stats
-4. Implement live odds integration
-5. Add injury/transfer tracking
-
-Enjoy your predictions! ⚽
