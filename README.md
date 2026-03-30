@@ -6,13 +6,13 @@ A machine learning-powered web application for predicting Premier League footbal
 
 - **Advanced Prediction Model**: Uses ensemble methods (RandomForest & ExtraTrees) to predict match outcomes
 - **Comprehensive Feature Engineering**: 
-  - Recent form metrics (5-match rolling windows)
+  - Takes account form metrics (all matches rolling windows)
   - Team performance indicators (goals, clean sheets, win rates)
   - Venue-specific form analysis
   - Rest days impact
   - Betting odds integration
   
-- **Beautiful Interactive UI** powered by Streamlit:
+- **Interactive UI** powered by Streamlit:
   - Team statistics buttons with detailed metrics
   - Probability visualization for all outcomes
   - Head-to-head match history
@@ -25,8 +25,7 @@ A machine learning-powered web application for predicting Premier League footbal
 ├── load_data.py              # Load CSV data into SQLite database
 ├── feature_engineering.py    # Generate features from match data
 ├── model_train.py            # Train and evaluate ML models
-├── app.py                    # Original Gradio interface
-├── app_advanced.py           # Advanced Streamlit interface (RECOMMENDED)
+├── app_advanced.py           # Streamlit interface
 ├── football_data_2025_26.csv # Input match data
 └── premier_league_project.db # SQLite database (auto-created)
 ```
@@ -46,7 +45,7 @@ python load_data.py
 ```
 This script:
 - Reads `football_data_2025_26.csv`
-- Creates SQLite database with teams, matches, and standings
+- Creates SQLite database with teams, matches and standings
 - Generates realistic betting odds
 
 ### 3. Engineer Features
@@ -72,21 +71,15 @@ Evaluates multiple models and saves the best one:
 
 ### 5. Launch the Predictor
 
-**Recommended - Advanced UI:**
+** Streamlit UI:**
 ```bash
 streamlit run app_advanced.py
 ```
-
-Or use the original Gradio interface:
-```bash
-python app.py
-```
-
 ## 📈 Feature Engineering Details
 
-### Core Statistics (5-Match Rolling Window)
+### Core Statistics
 - **Form**: Average points earned (0-1 scale)
-- **Win Rate**: Percentage of wins in recent matches
+- **Win Rate**: Percentage of wins
 - **Avg Goals**: Average goals scored
 - **Avg Conceded**: Average goals conceded
 - **Clean Sheets**: Number of matches without conceding
@@ -141,7 +134,7 @@ Best model is selected based on accuracy on test set (25% holdout).
 
 ## ⚠️ Important Notes
 
-1. **Data Quality**: Predictions depend on accurate historical data
+1. **Data Quality**: Predictions depend on historical data
 2. **Sample Size**: First few matches of season have limited historical data
 3. **Injuries/Suspensions**: Not currently factored in
 4. **Recent Changes**: Recent team composition changes not captured
