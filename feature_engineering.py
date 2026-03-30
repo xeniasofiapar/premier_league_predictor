@@ -2,7 +2,7 @@ import sqlite3
 import pandas as pd
 import numpy as np
 
-N_RECENT = 5
+N_RECENT = 30
 
 conn = sqlite3.connect("premier_league_project.db")
 
